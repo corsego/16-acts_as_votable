@@ -1,5 +1,5 @@
 <%= content_tag "div", id: "downvote-#{post.id}" do %>
-  <%= link_to downvote_post_path(post), method: :patch, remote: true do %>
+  <%= link_to downvote_post_path(post), method: :patch, remote: true, data: { disable_with: "voting..." } do %>
     <% if current_user.voted_down_on? post %>
       unvote
     <% else %>
